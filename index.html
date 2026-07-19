@@ -6,13 +6,13 @@
     <title>BunnyStore | Recargas y Cuentas Gamer</title>
     <style>
         :root {
-            --bg-body: #080c14;
-            --bg-card: #0f1726;
-            --bg-nav: #0b111c;
-            --neon-cyan: #00e5ff;
+            --bg-body: #000000; /* Fondo Negro Puro */
+            --bg-card: #0b0f17; /* Tarjetas oscuras premium */
+            --bg-nav: #05070a;  /* Barra superior más oscura */
+            --neon-color: #00ff66; /* Verde Neón reborXstore */
             --text-main: #ffffff;
             --text-muted: #64748b;
-            --border-card: #1e293b;
+            --border-card: #141b26;
         }
 
         body {
@@ -25,7 +25,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Barra de Navegación Principal */
+        /* Barra de Navegación */
         nav {
             background-color: var(--bg-nav);
             padding: 15px 5%;
@@ -47,28 +47,27 @@
         }
 
         nav .logo span {
-            color: var(--neon-cyan);
+            color: var(--neon-color);
         }
 
-        /* Menú de Categorías Desplazable (Estilo reborXstore) */
+        /* Menú de Categorías Desplazable */
         .menu-categorias {
             display: flex;
             justify-content: center;
             gap: 10px;
             padding: 15px 20px;
-            background-color: rgba(15, 23, 38, 0.4);
+            background-color: rgba(11, 15, 23, 0.6);
             overflow-x: auto;
             white-space: nowrap;
             border-bottom: 1px solid var(--border-card);
         }
 
-        /* Ocultar barra de scroll interna en celulares para mejor estética */
         .menu-categorias::-webkit-scrollbar {
             display: none;
         }
 
         .btn-categoria {
-            background-color: #1e293b;
+            background-color: #111622;
             color: var(--text-main);
             border: 1px solid transparent;
             padding: 10px 24px;
@@ -80,27 +79,25 @@
             user-select: none;
         }
 
-        /* Estado Activo del Botón */
+        /* Estado Activo en Verde */
         .btn-categoria.activo {
-            background-color: rgba(0, 229, 255, 0.1);
-            color: var(--neon-cyan);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+            background-color: rgba(0, 255, 102, 0.1);
+            color: var(--neon-color);
+            border-color: var(--neon-color);
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.25);
         }
 
-        /* Contenedor Principal de Contenido */
+        /* Contenedor Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px 20px;
         }
 
-        /* Estructura de Secciones por Defecto Ocultas */
         .seccion-contenido {
             display: none;
         }
 
-        /* Clase dinámica para mostrar la sección activa */
         .seccion-contenido.activa {
             display: block;
         }
@@ -121,18 +118,18 @@
             display: inline-block;
             width: 4px;
             height: 20px;
-            background-color: var(--neon-cyan);
+            background-color: var(--neon-color);
             border-radius: 2px;
         }
 
-        /* Rejilla de Productos Perfecta */
+        /* Rejilla de Productos */
         .grid-store {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 18px;
         }
 
-        /* Tarjeta de Producto Premium */
+        /* Tarjeta de Producto */
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-card);
@@ -142,3 +139,253 @@
             position: relative;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: var(--neon-color);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Etiqueta Destacada */
+        .badge-popular {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(90deg, #ff0055, #ff5500);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 3px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Contenedor de la Imagen */
+        .img-container {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        .card .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            margin-top: 2px;
+        }
+
+        /* Caja de Precios Exacta */
+        .price-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(20, 27, 38, 0.8);
+        }
+
+        .price-box .currency {
+            font-size: 0.75rem;
+            color: var(--neon-color);
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .price-box .amount {
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: block;
+            text-align: left;
+        }
+
+        /* Botones en Verde Neón */
+        .btn-action {
+            background-color: rgba(0, 255, 102, 0.05);
+            color: var(--neon-color);
+            border: 1px solid var(--neon-color);
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-action:hover {
+            background-color: var(--neon-color);
+            color: #000000;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        /* Botón de Contacto Flotante Fijo */
+        .btn-support {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">🐰 Bunny<span>Store</span></a>
+    </nav>
+
+    <div class="menu-categorias">
+        <button class="btn-categoria activo" onclick="cambiarSeccion('freefire', this)">FREE FIRE</button>
+        <button class="btn-categoria" onclick="cambiarSeccion('bloodstrike', this)">BLOOD STRIKE</button>
+        <button class="btn-categoria" onclick="cambiarSeccion('streaming', this)">STREAMING</button>
+        <button class="btn-categoria" onclick="cambiarSeccion('cuentas', this)">CUENTAS FF</button>
+    </div>
+
+    <div class="container">
+
+        <div id="seccion-freefire" class="seccion-contenido activa">
+            <h2>Productos Free Fire</h2>
+            <div class="grid-store">
+                
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="Tarjeta Semanal"></div>
+                    <h3>Tarjeta Semanal</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">534</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20la%20Tarjeta%20Semanal%20de%20FF" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="Tarjeta Mensual"></div>
+                    <h3>Tarjeta Mensual</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">9.790</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20la%20Tarjeta%20Mensual%20de%20FF" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="Pase Booyah"></div>
+                    <h3>Pase Booyah</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">2.670</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20el%20Pase%20Booyah" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="seccion-bloodstrike" class="seccion-contenido">
+            <h2>Productos Blood Strike</h2>
+            <div class="grid-store">
+                
+                <div class="card">
+                    <div class="img-container"><img src="bloodstrike.jpg" alt="Pase Elite"></div>
+                    <h3>Pase Élite</h3>
+                    <div class="subtitle">Blood Strike</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3.133</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20el%20Pase%20Elite%20de%20Blood%20Strike" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="badge-popular">Popular</div>
+                    <div class="img-container"><img src="bloodstrike.jpg" alt="540 Gold"></div>
+                    <h3>540 Gold</h3>
+                    <div class="subtitle">Blood Strike</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3.711</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20540%20Gold%20de%20Blood%20Strike" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="seccion-streaming" class="seccion-contenido">
+            <h2>Servicios de Entertainment</h2>
+            <div class="grid-store">
+                
+                <div class="card">
+                    <div class="img-container"><img src="netflix.jpg" alt="Netflix"></div>
+                    <h3>Netflix Premium</h3>
+                    <div class="subtitle">Pantalla Privada / 1 Mes</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">180</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20Netflix" target="_blank" class="btn-action">Adquirir</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="seccion-cuentas" class="seccion-contenido">
+            <h2>Catálogo de Cuentas FF</h2>
+            <div class="grid-store">
+                
+                <div class="card">
+                    <div class="img-container"><img src="cuenta1.jpg" alt="Huesito 43"></div>
+                    <h3>Huesito 43</h3>
+                    <div class="subtitle">Pase Sakura original</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">10.680</span></div>
+                    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20la%20cuenta%20Huesito%2043" target="_blank" class="btn-action">Ver Detalles</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/584120000000?text=Hola%20BunnyStore!%20Necesito%20soporte" class="btn-support" target="_blank">💬 Soporte</a>
+
+    <script>
+        function cambiarSeccion(nombreSeccion, botonPresionado) {
+            if(!nombreSeccion || !botonPresionado) return;
+
+            const secciones = document.querySelectorAll('.seccion-contenido');
+            secciones.forEach(function(sec) {
+                sec.classList.remove('activa');
+            });
+
+            const botones = document.querySelectorAll('.btn-categoria');
+            botones.forEach(function(btn) {
+                btn.classList.remove('activo');
+            });
+
+            const seccionDestino = document.getElementById('seccion-' + nombreSeccion);
+            if(seccionDestino) {
+                seccionDestino.classList.add('activa');
+            }
+
+            botonPresionado.classList.add('activo');
+        }
+    </script>
+
+</body>
+</html>
