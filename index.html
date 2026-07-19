@@ -1,37 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Primera Página Web</title>
+    <title>BunnyStore - Recargas Gamer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214;
+            color: #ffffff;
             text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f1f23;
+            padding: 30px;
+            border-bottom: 3px solid #00ff87;
         }
         h1 {
-            color: #1a73e8;
+            color: #00ff87;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            color: #a0a0b2;
+            font-size: 1.1rem;
+        }
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        .tarjeta-juego {
+            background-color: #27272e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .tarjeta-juego:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 255, 135, 0.2);
+        }
+        .tarjeta-juego h2 {
+            color: #ffffff;
+            margin-top: 10px;
+        }
+        .precio {
+            color: #00ff87;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
         button {
-            background-color: #1a73e8;
-            color: white;
+            background-color: #00ff87;
+            color: #121214;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
+            font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
         }
         button:hover {
-            background-color: #1557b0;
+            background-color: #00b35c;
         }
     </style>
 </head>
 <body>
 
-    <h1>¡Hola desde Google Chrome!</h1>
-    <p>Esta es mi primera página web creada desde cero.</p>
-    <button onclick="alert('¡Funciona perfectamente!')">Haz clic aquí</button>
+    <header>
+        <h1>🐰 BunnyStore</h1>
+        <p>Recargas rápidas, seguras y al mejor precio</p>
+    </header>
+
+    <div class="contenedor">
+        <!-- Tarjeta de Free Fire -->
+        <div class="tarjeta-juego">
+            <h2>Free Fire</h2>
+            <p>Recarga de Diamantes y Pases</p>
+            <p class="precio">Desde $1.00</p>
+            <button onclick="alert('¡Aquí pondremos tu WhatsApp para que te compren!')">Comprar ahora</button>
+        </div>
+
+        <!-- Tarjeta de Blood Strike -->
+        <div class="tarjeta-juego">
+            <h2>Blood Strike</h2>
+            <p>Recarga de Oro y Pases de Batalla</p>
+            <p class="precio">Desde $1.00</p>
+            <button onclick="alert('¡Aquí pondremos tu WhatsApp para que te compren!')">Comprar ahora</button>
+        </div>
+    </div>
 
 </body>
 </html>
