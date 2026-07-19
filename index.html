@@ -272,4 +272,112 @@
                 </div>
 
                 <div class="card">
-                    <div class="img-container"><img src="freefire.jpg" alt="300+
+                    <div class="img-container"><img src="freefire.jpg" alt="300+30 Diamantes"></div>
+                    <h3>300 + 30 💎</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">2.220</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20comprar%20300%2B30%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="520+52 Diamantes"></div>
+                    <h3>520 + 52 💎</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3.650</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20comprar%20520%2B52%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="1060+106 Diamantes"></div>
+                    <h3>1060 + 106 💎</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">6.730</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20comprar%201060%2B106%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="2180+218 Diamantes"></div>
+                    <h3>2180 + 218 💎</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">13.329</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20comprar%202180%2B218%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+                <div class="card">
+                    <div class="img-container"><img src="freefire.jpg" alt="5600+560 Diamantes"></div>
+                    <h3>5600 + 560 💎</h3>
+                    <div class="subtitle">Free Fire</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">34.281</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20comprar%205600%2B560%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="seccion-bloodstrike" class="seccion-contenido">
+            <h2>Productos Blood Strike</h2>
+            <div class="grid-store">
+                <div class="card">
+                    <div class="img-container"><img src="bloodstrike.jpg" alt="Pase Elite"></div>
+                    <h3>Pase Élite</h3>
+                    <div class="subtitle">Blood Strike</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3.133</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20el%20Pase%20Elite" target="_blank" class="btn-action">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="seccion-streaming" class="seccion-contenido">
+            <h2>Servicios de Entertainment</h2>
+            <div class="grid-store">
+                <div class="card">
+                    <div class="img-container"><img src="netflix.jpg" alt="Netflix"></div>
+                    <h3>Netflix Premium</h3>
+                    <div class="subtitle">1 Mes</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">180</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20Netflix" target="_blank" class="btn-action">Adquirir</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="seccion-cuentas" class="seccion-contenido">
+            <h2>Catálogo de Cuentas FF</h2>
+            <div class="grid-store">
+                <div class="card">
+                    <div class="img-container"><img src="cuenta1.jpg" alt="Huesito 43"></div>
+                    <h3>Huesito 43</h3>
+                    <div class="subtitle">Pase Sakura original</div>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">10.680</span></div>
+                    <a href="https://wa.me/584122874128?text=Hola!%20Me%20interesa%20la%20cuenta" target="_blank" class="btn-action">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/584122874128?text=Hola%20BunnyStore" class="btn-support" target="_blank">💬 Soporte</a>
+
+    <script>
+        function cambiarSeccion(nombreSeccion, botonPresionado) {
+            if(!nombreSeccion || !botonPresionado) return;
+            
+            var secciones = document.querySelectorAll('.seccion-contenido');
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].classList.remove('activa');
+            }
+
+            var botones = document.querySelectorAll('.btn-categoria');
+            for (var j = 0; j < botones.length; j++) {
+                botones[j].classList.remove('activo');
+            }
+
+            var seccionDestino = document.getElementById('seccion-' + nombreSeccion);
+            if(seccionDestino) {
+                seccionDestino.classList.add('activa');
+            }
+
+            botonPresionado.classList.add('activo');
+        }
+    </script>
+</body>
+</html>
