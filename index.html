@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BunnyStore | Recargas Gamer</title>
+    <title>BunnyStore | Líder en Recargas Gamer</title>
     <style>
         :root {
-            --bg-body: #02060d;       
-            --bg-card: #0b131f;       
-            --bg-nav: #050911;        
-            --neon-color: #00f0ff;    /* Azul/Cian Neón */
-            --green-neon: #00ff66;    /* Verde para botones */
-            --text-main: #ffffff;
-            --text-muted: #64748b;
-            --border-card: #142238;
+            --bg-main: #060913;       /* Fondo oscuro profundo de Wings Store */
+            --bg-card: #0d1326;       /* Fondo de las tarjetas de producto */
+            --bg-nav: #090e1d;        /* Barra de navegación superior */
+            --primary-neon: #00f0ff;  /* Cian Neón característico */
+            --accent-neon: #00ff66;   /* Verde de éxito para acciones principales */
+            --text-white: #ffffff;
+            --text-secondary: #94a3b8;
+            --border-glow: #1e293b;
         }
 
         * {
@@ -24,73 +24,76 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
+            background-color: var(--bg-main);
+            color: var(--text-white);
             -webkit-tap-highlight-color: transparent;
         }
 
+        /* Navbar estilo Premium Wings */
         nav {
             background-color: var(--bg-nav);
-            padding: 15px 5%;
+            padding: 15px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-card);
+            border-bottom: 2px solid var(--border-glow);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-main);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-white);
             text-decoration: none;
             letter-spacing: 0.5px;
         }
 
         nav .logo span {
-            color: var(--green-neon);
+            color: var(--primary-neon);
         }
 
+        /* Menú de categorías minimalista y limpio */
         .menu-categorias {
             display: flex;
-            justify-content: start;
-            gap: 10px;
+            justify-content: center;
+            gap: 15px;
             padding: 15px 20px;
-            background-color: rgba(11, 19, 31, 0.6);
-            overflow-x: auto;
-            white-space: nowrap;
-            border-bottom: 1px solid var(--border-card);
-        }
-
-        .menu-categorias::-webkit-scrollbar {
-            display: none;
+            background-color: rgba(9, 14, 29, 0.8);
+            border-bottom: 1px solid var(--border-glow);
         }
 
         .btn-categoria {
-            background-color: #111b2c;
-            color: var(--text-main);
+            background-color: #131b31;
+            color: var(--text-secondary);
             border: 1px solid transparent;
-            padding: 10px 24px;
-            font-size: 0.9rem;
+            padding: 12px 30px;
+            font-size: 0.95rem;
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-categoria:hover {
+            color: var(--text-white);
+            border-color: rgba(0, 240, 255, 0.3);
         }
 
         .btn-categoria.activo {
             background-color: rgba(0, 240, 255, 0.1);
-            color: var(--neon-color);
-            border-color: var(--neon-color);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+            color: var(--primary-neon);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
         .seccion-contenido {
@@ -102,85 +105,90 @@
         }
 
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         h2::before {
             content: '';
             display: inline-block;
-            width: 4px;
-            height: 20px;
-            background-color: var(--neon-color);
-            border-radius: 2px;
+            width: 5px;
+            height: 22px;
+            background-color: var(--primary-neon);
+            border-radius: 4px;
         }
 
+        /* Grid simétrica de productos */
         .grid-store {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
+        /* Tarjetas de Producto Estilo Wings */
         .card {
             background-color: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 12px;
-            padding: 12px;
+            border: 1px solid var(--border-glow);
+            border-radius: 14px;
+            padding: 16px;
             text-align: left;
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card:hover {
-            border-color: var(--neon-color);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            transform: translateY(-4px);
+            border-color: var(--primary-neon);
+            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.15);
         }
 
         .badge-popular {
             position: absolute;
-            top: -8px;
+            top: -10px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(90deg, #ff0055, #ff5500);
             color: white;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: bold;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
             white-space: nowrap;
             z-index: 2;
+            box-shadow: 0 2px 10px rgba(255,0,85,0.3);
         }
 
         .img-container {
             width: 100%;
-            height: 90px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 8px;
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 8px;
+            margin-bottom: 12px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
             position: relative;
+            border: 1px solid rgba(255,255,255,0.02);
         }
 
         .img-container img {
-            max-height: 85%;
-            max-width: 85%;
+            max-height: 80%;
+            max-width: 80%;
             object-fit: contain;
         }
 
         .card h3 {
-            font-size: 0.95rem;
-            margin: 4px 0;
+            font-size: 1rem;
+            margin: 4px 0 8px 0;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
@@ -188,85 +196,98 @@
         }
 
         .price-box {
-            margin: 6px 0 4px 0;
+            margin-bottom: 10px;
         }
 
         .price-box .currency {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-right: 3px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-right: 4px;
         }
 
         .price-box .amount {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: var(--text-main);
+            color: var(--text-white);
         }
 
         .bonus-coins {
             display: inline-block;
-            background-color: rgba(0, 149, 255, 0.15);
-            color: #0095ff;
-            font-size: 0.65rem;
+            background-color: rgba(0, 240, 255, 0.1);
+            color: var(--primary-neon);
+            font-size: 0.7rem;
             font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 20px;
-            margin-bottom: 8px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            align-self: flex-start;
         }
 
+        /* Inputs limpios e integrados */
         .card-input {
             width: 100%;
-            padding: 6px 10px;
-            background-color: #050911;
-            border: 1px solid var(--border-card);
-            border-radius: 6px;
+            padding: 8px 12px;
+            background-color: #060913;
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
             color: white;
-            font-size: 0.75rem;
-            margin-bottom: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
             outline: none;
-        }
-        .card-input:focus {
-            border-color: var(--neon-color);
+            transition: border-color 0.2s;
         }
 
+        .card-input:focus {
+            border-color: var(--primary-neon);
+        }
+
+        /* Botón de Recarga Estilo Botón Verde de Destino */
         .btn-action {
-            background-color: rgba(0, 255, 102, 0.05);
-            color: var(--green-neon);
-            border: 1px solid var(--green-neon);
-            padding: 8px;
-            font-weight: bold;
+            background-color: rgba(0, 255, 102, 0.08);
+            color: var(--accent-neon);
+            border: 1px solid var(--accent-neon);
+            padding: 10px;
+            font-weight: 700;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             transition: all 0.2s ease;
             text-align: center;
             cursor: pointer;
             width: 100%;
             display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-action:hover {
-            background-color: var(--green-neon);
-            color: #000000;
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+            background-color: var(--accent-neon);
+            color: #060913;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
         }
 
+        /* Soporte Flotante Oficial */
         .btn-support {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background-color: #25d366;
             color: white;
-            padding: 12px 22px;
-            border-radius: 30px;
+            padding: 14px 24px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            font-size: 0.95rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.6);
             z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .btn-support:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -276,51 +297,32 @@
         <a href="#" class="logo">🐰 Bunny<span>Store</span></a>
     </nav>
 
+    <!-- Menú simplificado: Solo las dos plataformas principales -->
     <div class="menu-categorias">
         <button class="btn-categoria activo" onclick="cambiarSeccion('freefire', this)">FREE FIRE</button>
         <button class="btn-categoria" onclick="cambiarSeccion('bloodstrike', this)">BLOOD STRIKE</button>
-        <button class="btn-categoria" onclick="cambiarSeccion('streaming', this)">STREAMING</button>
-        <button class="btn-categoria" onclick="cambiarSeccion('cuentas', this)">CUENTAS FF</button>
     </div>
 
     <div class="container">
 
-        <!-- SECCIÓN: FREE FIRE -->
+        <!-- CATEGORÍA: FREE FIRE -->
         <div id="seccion-freefire" class="seccion-contenido activa">
-            <h2>Productos Free Fire</h2>
+            <h2>Productos Destacados Free Fire</h2>
             <div class="grid-store">
                 
+                <!-- Producto FF 1 -->
                 <div class="card">
-                    <span class="badge-popular">Más Vendido</span>
+                    <span class="badge-popular">Popular</span>
                     <div class="img-container">
-                        <img src="https://ibb.co" alt="Tarjeta Básica">
+                        <img src="https://ibb.co" alt="Tarjeta Semanal">
                     </div>
-                    <h3>Tarjeta Básica</h3>
+                    <h3>Tarjeta Semanal</h3>
                     <div class="price-box"><span class="currency">Bs</span><span class="amount">534</span></div>
-                    <div class="bonus-coins">💎 Entrega Inmediata</div>
+                    <div class="bonus-coins">💎 +450 Diamantes</div>
                     
                     <input type="text" id="id-ff-1" class="card-input" placeholder="Ingresa tu ID de Juego">
-                    <button onclick="enviarPedido('Tarjeta Básica FF', '534 Bs', 'id-ff-1')" class="btn-action">Recargar Ahora</button>
+                    <button onclick="enviarPedido('Tarjeta Semanal FF', '534 Bs', 'id-ff-1')" class="btn-action">Recargar</button>
                 </div>
 
+                <!-- Producto FF 2 -->
                 <div class="card">
-                    <div class="img-container">
-                        <img src="https://ibb.co" alt="Pase Premium">
-                    </div>
-                    <h3>Pase Premium</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">1,200</span></div>
-                    <div class="bonus-coins">🔥 Oferta Semanal</div>
-                    
-                    <input type="text" id="id-ff-2" class="card-input" placeholder="Ingresa tu ID de Juego">
-                    <button onclick="enviarPedido('Pase Premium FF', '1.200 Bs', 'id-ff-2')" class="btn-action">Recargar Ahora</button>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- SECCIÓN: BLOOD STRIKE -->
-        <div id="seccion-bloodstrike" class="seccion-contenido">
-            <h2>Productos Blood Strike</h2>
-            <div class="grid-store">
-                <div class="card">
-                    <div class="img-container">
