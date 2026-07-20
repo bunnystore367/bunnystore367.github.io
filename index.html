@@ -55,7 +55,7 @@
 
         .menu-categorias {
             display: flex;
-            justify-content: center;
+            justify-content: start;
             gap: 10px;
             padding: 15px 20px;
             background-color: rgba(11, 19, 31, 0.6);
@@ -214,6 +214,21 @@
             margin-bottom: 8px;
         }
 
+        .card-input {
+            width: 100%;
+            padding: 6px 10px;
+            background-color: #050911;
+            border: 1px solid var(--border-card);
+            border-radius: 6px;
+            color: white;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            outline: none;
+        }
+        .card-input:focus {
+            border-color: var(--neon-color);
+        }
+
         .btn-action {
             background-color: rgba(0, 255, 102, 0.05);
             color: var(--green-neon);
@@ -225,6 +240,9 @@
             font-size: 0.8rem;
             transition: all 0.2s ease;
             text-align: center;
+            cursor: pointer;
+            width: 100%;
+            display: block;
         }
 
         .btn-action:hover {
@@ -267,175 +285,42 @@
 
     <div class="container">
 
-        <!-- FREE FIRE -->
+        <!-- SECCIÓN: FREE FIRE -->
         <div id="seccion-freefire" class="seccion-contenido activa">
             <h2>Productos Free Fire</h2>
             <div class="grid-store">
                 
-                <!-- Tarjeta Basica -->
                 <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Tarjeta Basica"></div>
+                    <span class="badge-popular">Más Vendido</span>
+                    <div class="img-container">
+                        <img src="https://ibb.co" alt="Tarjeta Básica">
+                    </div>
                     <h3>Tarjeta Básica</h3>
                     <div class="price-box"><span class="currency">Bs</span><span class="amount">534</span></div>
                     <div class="bonus-coins">💎 Entrega Inmediata</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20la%20Tarjeta%20Básica%20FF" target="_blank" class="btn-action">Comprar</a>
+                    
+                    <input type="text" id="id-ff-1" class="card-input" placeholder="Ingresa tu ID de Juego">
+                    <button onclick="enviarPedido('Tarjeta Básica FF', '534 Bs', 'id-ff-1')" class="btn-action">Recargar Ahora</button>
                 </div>
 
-                <!-- Tarjeta Semanal -->
                 <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Tarjeta Semanal"></div>
-                    <h3>Tarjeta Semanal</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">2.046</span></div>
-                    <div class="bonus-coins">💎 Oferta Especial</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20la%20Tarjeta%20Semanal%20FF" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- Tarjeta Mensual -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Tarjeta Mensual"></div>
-                    <h3>Tarjeta Mensual</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">9.790</span></div>
-                    <div class="bonus-coins">💎 Súper Ahorro</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20la%20Tarjeta%20Mensual%20FF" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- Pase Booyah -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Pase Booyah"></div>
-                    <h3>Pase Booyah</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">2.670</span></div>
-                    <div class="bonus-coins">💎 Pase Premium</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20el%20Pase%20Booyah" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 100+10 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="100+10"></div>
-                    <h3>100 + 10 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">760</span></div>
-                    <div class="bonus-coins">💎 Económico</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20100%2B10%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 200+20 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="200+20"></div>
-                    <h3>200 + 20 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">1490</span></div>
-                    <div class="bonus-coins">💎 Recarga Rápida</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20200%2B20%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 300+30 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="300+30"></div>
-                    <h3>300 + 30 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">2200</span></div>
-                    <div class="bonus-coins">💎 El más Buscado</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20300%2B30%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 520+52 -->
-                <div class="card">
-                    <div class="badge-popular">🔥 Más vendido</div>
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="520+52"></div>
-                    <h3>520 + 52 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3630</span></div>
-                    <div class="bonus-coins">💎 Recomendado</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20520%2B52%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 1060+106 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="1060+106"></div>
-                    <h3>1060 + 106 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">6740</span></div>
-                    <div class="bonus-coins">💎 Pack Gamer</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%201060%2B106%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 2180+218 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="2180+218"></div>
-                    <h3>2180 + 218 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">13,340</span></div>
-                    <div class="bonus-coins">💎 Gran Descuento</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%202180%2B218%20Diamantes" target="_blank" class="btn-action">Comprar</a>
-                </div>
-
-                <!-- 5600+560 -->
-                <div class="card">
-                    <div class="img-container"><img src="https://i.postimg.cc/W193ctdx/plj.jpg" alt="5600+560"></div>
-                    <h3>5600 + 560 💎</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">34,290</span></div>
-                    <div class="bonus-coins">💎 Pack Competitivo</div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%205600%2B560%20Diamantes" target="_blank" class="btn-action">Comprar</a>
+                    <div class="img-container">
+                        <img src="https://ibb.co" alt="Pase Premium">
+                    </div>
+                    <h3>Pase Premium</h3>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">1,200</span></div>
+                    <div class="bonus-coins">🔥 Oferta Semanal</div>
+                    
+                    <input type="text" id="id-ff-2" class="card-input" placeholder="Ingresa tu ID de Juego">
+                    <button onclick="enviarPedido('Pase Premium FF', '1.200 Bs', 'id-ff-2')" class="btn-action">Recargar Ahora</button>
                 </div>
 
             </div>
         </div>
 
-        <!-- BLOOD STRIKE -->
+        <!-- SECCIÓN: BLOOD STRIKE -->
         <div id="seccion-bloodstrike" class="seccion-contenido">
             <h2>Productos Blood Strike</h2>
             <div class="grid-store">
                 <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Pase Elite"></div>
-                    <h3>Pase Élite</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">3.133</span></div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20el%20Pase%20Elite" target="_blank" class="btn-action">Comprar</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- STREAMING -->
-        <div id="seccion-streaming" class="seccion-contenido">
-            <h2>Servicios de Entertainment</h2>
-            <div class="grid-store">
-                <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Netflix"></div>
-                    <h3>Netflix Premium</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">180</span></div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Quiero%20Netflix" target="_blank" class="btn-action">Adquirir</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- CUENTAS -->
-        <div id="seccion-cuentas" class="seccion-contenido">
-            <h2>Catálogo de Cuentas FF</h2>
-            <div class="grid-store">
-                <div class="card">
-                    <div class="img-container"><img src="https://i.ibb.co/VWV3m8p/ff-tarjetas.png" alt="Huesito 43"></div>
-                    <h3>Huesito 43</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">10.680</span></div>
-                    <a href="https://wa.me/584122874128?text=Hola!%20Me%20interesa%20la%20cuenta" target="_blank" class="btn-action">Ver Detalles</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Botón de Soporte -->
-    <a href="https://wa.me/584122874128?text=Hola%20BunnyStore" class="btn-support" target="_blank">💬 Soporte</a>
-
-    <script>
-        function cambiarSeccion(nombreSeccion, botonPresionado) {
-            if(!nombreSeccion || !botonPresionado) return;
-            var secciones = document.querySelectorAll('.seccion-contenido');
-            for (var i = 0; i < secciones.length; i++) {
-                secciones[i].classList.remove('activa');
-            }
-            var botones = document.querySelectorAll('.btn-categoria');
-            for (var j = 0; j < botones.length; j++) {
-                botones[j].classList.remove('activo');
-            }
-            var seccionDestino = document.getElementById('seccion-' + nombreSeccion);
-            if(seccionDestino) {
-                seccionDestino.classList.add('activa');
-            }
-            botonPresionado.classList.add('activo');
-        }
-    </script>
-</body>
-</html>
+                    <div class="img-container">
