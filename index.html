@@ -241,7 +241,7 @@
             border-color: var(--primary-neon);
         }
 
-        /* Botón de Recarga Estilo Botón Verde de Destino */
+        /* Botón de Recarga */
         .btn-action {
             background-color: rgba(0, 255, 102, 0.08);
             color: var(--accent-neon);
@@ -297,7 +297,7 @@
         <a href="#" class="logo">🐰 Bunny<span>Store</span></a>
     </nav>
 
-    <!-- Menú simplificado: Solo las dos plataformas principales -->
+    <!-- Menú de categorías corregido -->
     <div class="menu-categorias">
         <button class="btn-categoria activo" onclick="cambiarSeccion('freefire', this)">FREE FIRE</button>
         <button class="btn-categoria" onclick="cambiarSeccion('bloodstrike', this)">BLOOD STRIKE</button>
@@ -305,24 +305,25 @@
 
     <div class="container">
 
-        <!-- CATEGORÍA: FREE FIRE -->
+        <!-- CATEGORÍA: FREE FIRE (Con tus paquetes reales cargados) -->
         <div id="seccion-freefire" class="seccion-contenido activa">
             <h2>Productos Destacados Free Fire</h2>
             <div class="grid-store">
                 
-                <!-- Producto FF 1 -->
+                <!-- 100+10 -->
                 <div class="card">
-                    <span class="badge-popular">Popular</span>
+                    <span class="badge-popular">Económico</span>
                     <div class="img-container">
-                        <img src="https://ibb.co" alt="Tarjeta Semanal">
+                        <img src="https://ibb.co" alt="100+10 Diamantes">
                     </div>
-                    <h3>Tarjeta Semanal</h3>
-                    <div class="price-box"><span class="currency">Bs</span><span class="amount">534</span></div>
-                    <div class="bonus-coins">💎 +450 Diamantes</div>
+                    <h3>100 + 10 Diamantes</h3>
+                    <div class="price-box"><span class="currency">Bs</span><span class="amount">760</span></div>
+                    <div class="bonus-coins">💎 Total: 110 Diams</div>
                     
                     <input type="text" id="id-ff-1" class="card-input" placeholder="Ingresa tu ID de Juego">
-                    <button onclick="enviarPedido('Tarjeta Semanal FF', '534 Bs', 'id-ff-1')" class="btn-action">Recargar</button>
+                    <button onclick="enviarPedido('100 + 10 Diamantes FF', '760 Bs', 'id-ff-1')" class="btn-action">Recargar</button>
                 </div>
 
-                <!-- Producto FF 2 -->
+                <!-- 200+20 -->
                 <div class="card">
+                    <div class="img-container">
